@@ -236,7 +236,7 @@ void CSapConnection::AsyncConnect(const string &strIp,unsigned int dwPort,int nT
 	boost::asio::ip::address_v4 addrV4=boost::asio::ip::address_v4::from_string(strIp,err);
 	if(err)
 	{
-		CS_XLOG(XLOG_WARNING,"CSapConnection::%s,connection[%0x],invalid addr[%s:%d]\n",__FUNCTION__,this,strIp.c_str(),dwPort);
+		SS_SLOG(XLOG_WARNING,"CSapConnection::%s,connection[%0x],invalid addr[%s:%d]\n",__FUNCTION__,this,strIp.c_str(),dwPort);
 		return;
 	}
 	tcp::endpoint endpoint(addrV4,dwPort);
